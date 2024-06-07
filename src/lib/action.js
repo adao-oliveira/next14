@@ -14,7 +14,7 @@ export const addPost = async (prevState,formData) => {
   const { title, desc, slug, userId } = Object.fromEntries(formData);
 
   try {
-    connectToDb();
+    await connectToDb();
     const newPost = new Post({
       title,
       desc,
@@ -36,7 +36,7 @@ export const deletePost = async (formData) => {
   const { id } = Object.fromEntries(formData);
 
   try {
-    connectToDb();
+    await connectToDb();
 
     await Post.findByIdAndDelete(id);
     console.log("deleted from db");
@@ -52,7 +52,7 @@ export const addUser = async (prevState,formData) => {
   const { username, email, password, img } = Object.fromEntries(formData);
 
   try {
-    connectToDb();
+    await connectToDb();
     const newUser = new User({
       username,
       email,
@@ -73,7 +73,7 @@ export const deleteUser = async (formData) => {
   const { id } = Object.fromEntries(formData);
 
   try {
-    connectToDb();
+    await connectToDb();
 
     await Post.deleteMany({ userId: id });
     await User.findByIdAndDelete(id);
@@ -104,7 +104,7 @@ export const register = async (previousState, formData) => {
   }
 
   try {
-    connectToDb();
+    await connectToDb();
 
     const user = await User.findOne({ username });
 
