@@ -25,4 +25,4 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [https://portal-indyco-next.5p7m7t.easypanel.host](https://portal-indyco-next.5p7m7t.easypanel.host) with your browser to see the result.
